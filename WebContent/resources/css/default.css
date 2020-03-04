@@ -1,0 +1,476 @@
+
+/*
+	Clases para controles
+*/
+
+#title {
+    font-weight: bold;
+    text-decoration: 
+}
+
+input, textarea {
+	text-transform: uppercase;
+}
+
+#tblLogon {
+    width: 595px;
+    height: 389px;
+ 	padding: 10px 10px 10px 10px !important; 
+	background: url('../img/login.jpg') no-repeat !important;
+	overflow: auto;
+	zoom: 1;
+}
+
+#bt_clean, #bt_search, #bt_login, #bt_new, #bt_save, #bt_cancel, #bt_send, .ui-button .ui-state-default {
+	display: inline;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 7px 20px;
+    margin: 0 0 0 10px;
+	color: #FFFFFF;
+	background: #DBAE9B; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #DBAE9B 0%, #D09980 47%, #D6A590 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#DBAE9B), color-stop(47%,#D09980), color-stop(100%,#D6A590)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #DBAE9B 0%,#D09980 47%,#D6A590 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #DBAE9B 0%,#D09980 47%,#D6A590 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #DBAE9B 0%,#D09980 47%,#D6A590 100%); /* IE10+ */
+	background: linear-gradient(135deg,  #DBAE9B 0%,#D09980 47%,#D6A590 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#DBAE9B', endColorstr='#D6A590',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    border: 0 none;
+    border-radius: 5px;
+    text-shadow: 0 -1px 0 #000;
+    box-shadow: 7px 7px 21px -2px #CCB09B;
+    cursor: pointer;
+    -webkit-transition: all 150ms ease;
+    transition: all 150ms ease;    
+}
+
+
+#bt_close, #bt_remove_no, #bt_remove_yes, .ui-button .ui-state-default {
+	display: inline;
+    font-size: 0.6em;
+    font-weight: bold;
+    text-transform: uppercase;
+	color: #FFFFFF;
+	background: #DBAE9B; /* Old browsers */
+}
+
+#footer {
+	background:#D5A38D;
+	width:100%;
+	height:75px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+
+/*
+	Clases
+*/
+
+.ui-state-hover, 
+.ui-widget-content .ui-state-hover, 
+.ui-widget-header .ui-state-hover, 
+.ui-state-focus, .ui-widget-content 
+.ui-state-focus, .ui-widget-header .ui-state-focus 
+{ 
+	border: 1px solid #F0E9E1; 
+	background: #F0E9E1; 
+	color: #381F00;
+}
+
+#numberId, 
+#checkDigit,
+#height {
+	font-weight: bold; 
+	text-align: right;
+}
+
+#birthDate,
+#birthPlaceCode,
+#birthLocation,
+#registerDate,
+#expeditionDate,
+#expirationDate {
+	font-weight: bold; 
+	text-align: center;
+}
+
+#names,
+#fatherLastName,
+#motherLastName,
+#addressPlaceCode,
+#addressLocation,
+#marriedStatus,
+#levelInstruction,
+#sex,
+#fatherNumberId,
+#fatherNames,
+#fatherFatherLastName,
+#fatherMotherLastName,
+#motherNumberId,
+#motherNames,
+#motherFatherName,
+#motherMotherLastName,
+#restrictions,
+#fullAddress { 
+	font-weight: bold; 
+	
+}
+
+.pui-datatable-even, ui-state-highlight tbody td {
+	color: #A5896D; 	
+	background-color: #FDFAE3; 
+	border-color: #F0E9E1;
+}
+
+.pui-growl-item {
+	color: black;
+	background-color: #FFEFBF; 
+	border-color: red;
+	font-size: 12px;
+}
+
+.pui-growl-title {
+	font-weight:bold;
+	color: #FFAA00; 
+	padding:0 0 7px 0;
+	display:block;
+}
+
+.ui-widget, .ui-widget .ui-widget, .ui-growl-item {
+	font-size: 11px !important;
+} 
+
+.ui-widget {
+	font-size: 10px !important;
+
+}
+
+.ui-widget-overlay {
+	background: rgba(50, 50, 50, 50);
+	opacity: .20;
+	filter: Alpha(Opacity=20);
+}
+
+.pui-datatable .pui-sortable-column {
+	cursor: pointer;
+}
+
+.pui-datatable thead th, .pui-datatable tbody td, .pui-datatable tfoot td {
+	padding: 4px 10px;
+	overflow: hidden;
+	white-space: nowrap;
+	border-width: 1px;
+	border-style: solid;
+	font-size: 11px !important;
+}
+
+.pui-menu {
+    width: 210px;
+    text-align: left;
+    border-color: #A67847;
+	min-height: 100%;
+}
+
+.pui-menu .ui-widget {
+    width: 200px;
+    text-align: left;
+	
+}
+
+.pui-menu .ui-widget-header {
+    color: white;
+    background: #D5A38D;
+    font-size: 1.2em;
+}
+
+.pui-menu .pui-menuitem-link {
+	display: block;
+	width: 100%;
+	outline: none;
+	text-decoration: none;
+	font-weight: 400;
+	border: solid 1px transparent;
+	float: left;
+	line-height: 16px;
+	padding: 0.3em;
+	cursor: pointer;
+}
+
+.pui-menu a:link {
+    color: #000000;
+}
+
+.pui-menu a:hover {
+    color: #A67847;
+    background: #F2E7DC;
+}
+
+.pui-menu a:active {
+	color: black;
+}
+
+.ddl-menu {
+	margin: 0 auto;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	width: 300px;
+	text-align: left;
+}
+
+.ddl-menu-table {
+	display: table; 
+	margin-left: auto; 
+	margin-right: auto; 
+	width: 80%;	
+}
+
+.ddl-menu-logotipo {
+    background: url('../img/midis-logo.jpg') no-repeat ;
+    background-size: 233px 54px;
+    height: 54px;
+    width: 233px;
+    float: left;
+}
+
+.ddl-menu-icon {
+    background: url('../img/login-manager.png') no-repeat ;
+    background-size: 48px 48px;
+    height: 48px;
+    width: 48px;
+    float: left;
+}
+
+.ddl-menu-title{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	letter-spacing: -3px;
+	line-height: 1em;
+	color: white;
+	font-size: 45px;
+	text-shadow: 0px 0px 0 rgb(231,231,231),1px 1px 0 rgb(216,216,216),2px 2px 0 rgb(202,202,202),3px 3px 0 rgb(187,187,187),4px 4px 0 rgb(173,173,173),5px 5px 0 rgb(158,158,158), 6px 6px 0 rgb(144,144,144),7px 7px 6px rgba(0,0,0,0.6),7px 7px 1px rgba(0,0,0,0.5),0px 0px 6px rgba(0,0,0,.2);
+	padding: 0px 0px 0px 51px;
+    font-style: italic;
+    float: left;    
+}
+
+.ddl-menu-separator {
+	border-top: 2px solid #A5896D;
+	margin: 0 auto;
+}
+
+.ddl-div-watermark {
+	margin-top: 100px;
+	margin-left: 100px;
+    opacity: 0.1;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+	
+.ddl-menu-watermark {
+    background: url('../img/midis-banner.jpg') no-repeat ;
+    background-size: 609px 175px;
+    width: 609px; 
+    height: 175px;
+}
+
+.div-left {
+    float:left;
+    width: 30%;
+    color: #00736A;
+    margin: 0px;
+}
+
+.div-right {
+    float:right;
+    width: 60%;
+    padding-right:10px;
+}
+
+.copyrights-footer {
+    color: #333333;
+    font-family: Calibri;
+    font-size: 13px;
+}
+
+.copyrights-footer a {
+    color: #333333;
+    font-family: Calibri;
+    font-size: 13px;
+    border: none;
+    font-weight: bold;
+}
+
+.form-text {
+    color: #d89d36;
+    font-family: Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    width: 180px;
+}
+
+.form-login-left {
+    color: #000000;
+    font-family: Calibri;
+    font-size: 14px;
+    padding-left: 200px;
+    width: 60%;
+}
+
+.form-password-left {
+    color: #000000;
+    font-family: Calibri;
+    font-size: 14px;
+    width: 35%;
+}
+
+
+.input-code {
+    required: required;
+    text-align: right;
+    font-weight: bold !important;
+    font-size: 12px !important;
+    width: 80px;
+}
+
+.column-code {
+    width: 20px; 
+    text-align: center; 
+}
+
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight
+{
+	color: #FFFFFF;
+	text-decoration: none;
+	background-color: #D8BC89! important;
+	background-position: 0px;
+	background-image: -moz-linear-gradient(top, #D8BC89, #D8BC89) !important;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#D8BC89), to(#D8BC89));
+	background-image: -webkit-linear-gradient(top, #D8BC89, #D8BC89);
+	background-image: -o-linear-gradient(top, #D8BC89, #D8BC89);
+	background-image: linear-gradient(to bottom, #D8BC89, #D8BC89);
+	background-repeat: repeat-x;
+	border-color: #D8BC89;
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#D8BC89', endColorstr='#D8BC89', GradientType=0);
+}
+
+.pui-tabview .pui-tabview-nav li {
+    list-style: none;
+    float: left;
+    position: relative;
+    margin: 0 .2em 1px 0;
+    padding: 0;
+    white-space: nowrap;
+    font-size: 9pt;
+}
+
+.pui-dialog .pui-dialog-titlebar {
+    padding: .4em .4em .4em 1em;
+    position: relative;
+    border: 0px;
+    background-color: #FFEFBF;
+    font-size: 12px;
+}
+
+/* ------------------------------------*/
+
+.photo {
+    width: 250px;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.signature {
+    width: 250px;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.custom-file-input {
+	display: inline-block;
+	position: relative;
+	color: #533e00;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.custom-file-input input {
+	visibility: hidden;
+	width: 100px
+}
+
+.custom-file-input:before {
+	content: 'Seleccione un archivo';
+	color: #FFFFFF;
+	display: block;
+	background: #FEBF01 url('../img/upload.png') 5px no-repeat; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #FEBF01 0%, #FEBF01 47%, #FEBF01 100%) url('../img/upload.png') 5px no-repeat; /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#FEBF01), color-stop(47%,#FEBF01), color-stop(100%,#FEBF01)) url('../img/upload.png') 5px no-repeat; /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(-45deg,  #FEBF01 0%,#FEBF01 47%,#FEBF01 100%) url('../img/upload.png') 5px no-repeat; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(-45deg,  #FEBF01 0%,#FEBF01 47%,#FEBF01 100%) url('../img/upload.png') 5px no-repeat; /* Opera 11.10+ */
+	background: -ms-linear-gradient(-45deg,  #FEBF01 0%,#FEBF01 47%,#FEBF01 100%) url('../img/upload.png') 5px no-repeat; /* IE10+ */
+	background: linear-gradient(135deg,  #FEBF01 0%,#FEBF01 47%,#FEBF01 100%) url('../img/upload.png') 5px no-repeat; /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FEBF01', endColorstr='#FEBF01',GradientType=1 ) url('../img/upload.png') 5px no-repeat; /* IE6-9 fallback on horizontal gradient */
+    border: 0 none;
+    border-radius: 5px;
+    text-shadow: 0 -1px 0 #000;
+    box-shadow: 7px 7px 21px -2px #F7E6B4;
+	padding: 5px 0px;
+	outline: none;
+	white-space: nowrap;
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+	font-size: 10pt;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -3px;
+	width: 200px;
+}
+.custom-file-input:hover:before {
+	border-color: #FEBF01;
+}
+.custom-file-input:active:before {
+	background: #FEBF01;
+}
+
+.input-file-text {
+	text-align: left;
+	font-size: 14pt;
+	font-weight: normal;
+	text-transform: none;
+	width: 300px;
+	height: 25px;
+	margin-top: 5px;
+}
+
+
+#uploadView {
+	margin-top: 30px;
+}
+
+.shadowBox {
+	  box-shadow: 10px 10px 30px #000000;
+	  -webkit-box-shadow: 10px 10px 30px #000000;
+	  -moz-box-shadow: 10px 10px 30px #000000;
+}
+ 
+ .centeredBox {
+	  position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  transform: translate(-50%, -50%);
+ }
+ 
+ .dialog-login-title {
+	color: white;
+    background-color: #E5D1BE;
+    font-weight: bold;
+    height: 30px;
+    font-size: 16px;
+    padding-left: 10px;
+}

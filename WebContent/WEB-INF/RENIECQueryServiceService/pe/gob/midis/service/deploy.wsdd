@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from RENIECQueryServiceService WSDL service -->
+
+  <service name="RENIECQueryService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.midis.gob.pe"/>
+      <parameter name="wsdlServiceElement" value="RENIECQueryServiceService"/>
+      <parameter name="schemaQualified" value="http://exception.midis.gob.pe,http://service.midis.gob.pe,http://bean.midis.gob.pe"/>
+      <parameter name="wsdlServicePort" value="RENIECQueryService"/>
+      <parameter name="className" value="pe.gob.midis.service.RENIECQueryService"/>
+      <parameter name="wsdlPortType" value="RENIECQueryService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service.midis.gob.pe" xmlns:retNS="http://service.midis.gob.pe" xmlns:rtns="http://bean.midis.gob.pe" name="queryById" qname="operNS:queryById" returnQName="retNS:queryByIdReturn" returnType="rtns:DNIBodyResponse" soapAction="">
+        <parameter xmlns:pns="http://service.midis.gob.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:applicantInstitutionUser" type="tns:string"/>
+        <parameter xmlns:pns="http://service.midis.gob.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:dniNumber" type="tns:string"/>
+        <parameter xmlns:pns="http://service.midis.gob.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:subqueryType" type="tns:int"/>
+        <parameter xmlns:pns="http://service.midis.gob.pe" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:signatureType" type="tns:int"/>
+        <fault xmlns:fns="http://service.midis.gob.pe" xmlns:tns="http://exception.midis.gob.pe" name="RCConenectionException" qname="fns:fault" class="pe.gob.midis.exception.RCConenectionException" type="tns:RCConenectionException"/>
+      </operation>
+      <parameter name="allowedMethods" value="queryById"/>
+
+      <typeMapping xmlns:ns="http://bean.midis.gob.pe" qname="ns:DNIBodyResponse" type="java:pe.gob.midis.bean.DNIBodyResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://exception.midis.gob.pe" qname="ns:RCConenectionException" type="java:pe.gob.midis.exception.RCConenectionException" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://bean.midis.gob.pe" qname="ns:Header" type="java:pe.gob.midis.bean.Header" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

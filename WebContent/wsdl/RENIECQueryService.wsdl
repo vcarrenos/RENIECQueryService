@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+				  xmlns:ax29="http://exception.midis.gob.pe/xsd" 
+				  xmlns:ns1="http://org.apache.axis2/xsd" 
+				  xmlns:ns="http://service.midis.gob.pe" 
+				  xmlns:ax27="http://io.java/xsd" 
+				  xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" 
+				  xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+				  xmlns:ax211="http://bean.midis.gob.pe/xsd" 
+				  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+				  xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
+				  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+				  xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" 
+				  targetNamespace="http://service.midis.gob.pe">
+				  
+    <wsdl:documentation>
+		RENIECQueryService
+	</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://exception.midis.gob.pe/xsd">
+            <xs:complexType name="RQSInvalidSubqueryTypeException">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="RQSInvalidErrorTypeException">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="RQSConnectionException">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="RQSException">
+                <xs:sequence/>
+            </xs:complexType>
+            <xs:complexType name="RQSInvalidFamilyTiesTypeException">
+                <xs:sequence/>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://io.java/xsd">
+            <xs:complexType name="IOException">
+                <xs:sequence/>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://bean.midis.gob.pe/xsd">
+            <xs:complexType name="BaseDNIResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="apellidoCasada" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="apellidoCasadaMadre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="apellidoMaternoMadre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="apellidoMaternoPadre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="apellidoPaternoMadre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="apellidoPaternoPadre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="bloqueOChalet" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codigoDepaDomicilio" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codigoDepaNacimiento" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codigoDistDomicilio" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codigoDistNacimiento" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codigoError" type="xs:int"/>
+                    <xs:element minOccurs="0" name="codigoNivelEducacion" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codigoProvDomicilio" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codigoProvNacimiento" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="digitoVerificacion" type="xs:int"/>
+                    <xs:element minOccurs="0" name="direccion" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="estadoCivil" type="xs:int"/>
+                    <xs:element minOccurs="0" name="estatura" type="xs:int"/>
+                    <xs:element minOccurs="0" name="etapa" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fechaExpedicion" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="fechaExpiracion" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="fechaNacimiento" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="fechaRegistro" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="folderFoto" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="interior" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="longitudFoto" type="xs:int"/>
+                    <xs:element minOccurs="0" name="lote" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="manzana" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombreDepaDomicilio" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombreDepaNacimiento" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombreDistDomicilio" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombreDistNacimiento" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombreProvDomicilio" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombreProvNacimiento" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombres" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombresMadre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nombresPadre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numeroDNI" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numeroDNIMadre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numeroDNIPadre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numeroDireccion" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="prefijoBloqueChalet" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="prefijoDireccion" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="prefijoDptoPisoInterior" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="prefijoUrbCondomResid" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="reservado" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="restriccion" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sexo" type="xs:int"/>
+                    <xs:element minOccurs="0" name="urbanizacion" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AdultDNIResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax211:BaseDNIResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="folderFirma" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="longitudFirma" type="xs:int"/>
+                            <xs:element minOccurs="0" name="reservado_2" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="reservado_3" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ChildDNIResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax211:BaseDNIResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="reservado_2" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="reservado_3" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="NamesResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codigoError" type="xs:int"/>
+                    <xs:element minOccurs="0" name="listaPersonasEncontradas" nillable="true" type="xs:anyType"/>
+                    <xs:element minOccurs="0" name="reservado" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="totalCoincidencias" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax212="http://bean.midis.gob.pe/xsd" xmlns:ax28="http://io.java/xsd" xmlns:ax210="http://exception.midis.gob.pe/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.midis.gob.pe">
+            <xs:import namespace="http://io.java/xsd"/>
+            <xs:import namespace="http://exception.midis.gob.pe/xsd"/>
+            <xs:import namespace="http://bean.midis.gob.pe/xsd"/>
+            <xs:element name="consultarPersona">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="dni" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="usuario" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="consultarPersonaResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RENIECQueryServiceJMSException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="JMSException" nillable="true" type="xs:anyType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RENIECQueryServiceIOException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="IOException" nillable="true" type="ax27:IOException"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RENIECQueryServiceRQSInvalidSubqueryTypeException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="RQSInvalidSubqueryTypeException" nillable="true" type="ax29:RQSInvalidSubqueryTypeException"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RENIECQueryServiceRQSInvalidErrorTypeException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="RQSInvalidErrorTypeException" nillable="true" type="ax29:RQSInvalidErrorTypeException"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RENIECQueryServiceRQSConnectionException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="RQSConnectionException" nillable="true" type="ax29:RQSConnectionException"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RENIECQueryServiceRQSException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="RQSException" nillable="true" type="ax29:RQSException"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="queryByAdultId">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="usuarioInstitucionApli" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="numeroDNI" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="tipoSubConsulta" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="queryByAdultIdResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax212:AdultDNIResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RENIECQueryServiceRQSInvalidFamilyTiesTypeException">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="RQSInvalidFamilyTiesTypeException" nillable="true" type="ax29:RQSInvalidFamilyTiesTypeException"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="queryByChildId">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="usuarioInstitucionApli" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="numeroDNIApoderado" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="numeroDNI" nillable="true" type="xs:string"/>
+                        <xs:element name="tipoVinculo" type="xs:int"/>
+                        <xs:element minOccurs="0" name="tipoSubConsulta" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="queryByChildIdResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax212:ChildDNIResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="queryByNames">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="usuarioInstitucionApli" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="apellidoPaterno" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="apellidoMaterno" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="nombres" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="queryByNamesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax212:NamesResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="queryByChildIdRequest">
+        <wsdl:part name="parameters" element="ns:queryByChildId"/>
+    </wsdl:message>
+    <wsdl:message name="queryByChildIdResponse">
+        <wsdl:part name="parameters" element="ns:queryByChildIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="RENIECQueryServiceJMSException">
+        <wsdl:part name="parameters" element="ns:RENIECQueryServiceJMSException"/>
+    </wsdl:message>
+    <wsdl:message name="RENIECQueryServiceIOException">
+        <wsdl:part name="parameters" element="ns:RENIECQueryServiceIOException"/>
+    </wsdl:message>
+    <wsdl:message name="RENIECQueryServiceRQSInvalidSubqueryTypeException">
+        <wsdl:part name="parameters" element="ns:RENIECQueryServiceRQSInvalidSubqueryTypeException"/>
+    </wsdl:message>
+    <wsdl:message name="RENIECQueryServiceRQSInvalidFamilyTiesTypeException">
+        <wsdl:part name="parameters" element="ns:RENIECQueryServiceRQSInvalidFamilyTiesTypeException"/>
+    </wsdl:message>
+    <wsdl:message name="RENIECQueryServiceRQSInvalidErrorTypeException">
+        <wsdl:part name="parameters" element="ns:RENIECQueryServiceRQSInvalidErrorTypeException"/>
+    </wsdl:message>
+    <wsdl:message name="RENIECQueryServiceRQSConnectionException">
+        <wsdl:part name="parameters" element="ns:RENIECQueryServiceRQSConnectionException"/>
+    </wsdl:message>
+    <wsdl:message name="RENIECQueryServiceRQSException">
+        <wsdl:part name="parameters" element="ns:RENIECQueryServiceRQSException"/>
+    </wsdl:message>
+    <wsdl:message name="queryByAdultIdRequest">
+        <wsdl:part name="parameters" element="ns:queryByAdultId"/>
+    </wsdl:message>
+    <wsdl:message name="queryByAdultIdResponse">
+        <wsdl:part name="parameters" element="ns:queryByAdultIdResponse"/>
+    </wsdl:message>
+    <wsdl:message name="consultarPersonaRequest">
+        <wsdl:part name="parameters" element="ns:consultarPersona"/>
+    </wsdl:message>
+    <wsdl:message name="consultarPersonaResponse">
+        <wsdl:part name="parameters" element="ns:consultarPersonaResponse"/>
+    </wsdl:message>
+    <wsdl:message name="queryByNamesRequest">
+        <wsdl:part name="parameters" element="ns:queryByNames"/>
+    </wsdl:message>
+    <wsdl:message name="queryByNamesResponse">
+        <wsdl:part name="parameters" element="ns:queryByNamesResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="RENIECQueryServicePortType">
+        <wsdl:operation name="queryByChildId">
+            <wsdl:input message="ns:queryByChildIdRequest" wsaw:Action="urn:queryByChildId"/>
+            <wsdl:output message="ns:queryByChildIdResponse" wsaw:Action="urn:queryByChildIdResponse"/>
+            <wsdl:fault message="ns:RENIECQueryServiceJMSException" name="RENIECQueryServiceJMSException" wsaw:Action="urn:queryByChildIdRENIECQueryServiceJMSException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceIOException" name="RENIECQueryServiceIOException" wsaw:Action="urn:queryByChildIdRENIECQueryServiceIOException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSInvalidSubqueryTypeException" name="RENIECQueryServiceRQSInvalidSubqueryTypeException" wsaw:Action="urn:queryByChildIdRENIECQueryServiceRQSInvalidSubqueryTypeException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSInvalidFamilyTiesTypeException" name="RENIECQueryServiceRQSInvalidFamilyTiesTypeException" wsaw:Action="urn:queryByChildIdRENIECQueryServiceRQSInvalidFamilyTiesTypeException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSInvalidErrorTypeException" name="RENIECQueryServiceRQSInvalidErrorTypeException" wsaw:Action="urn:queryByChildIdRENIECQueryServiceRQSInvalidErrorTypeException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSConnectionException" name="RENIECQueryServiceRQSConnectionException" wsaw:Action="urn:queryByChildIdRENIECQueryServiceRQSConnectionException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSException" name="RENIECQueryServiceRQSException" wsaw:Action="urn:queryByChildIdRENIECQueryServiceRQSException"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryByAdultId">
+            <wsdl:input message="ns:queryByAdultIdRequest" wsaw:Action="urn:queryByAdultId"/>
+            <wsdl:output message="ns:queryByAdultIdResponse" wsaw:Action="urn:queryByAdultIdResponse"/>
+            <wsdl:fault message="ns:RENIECQueryServiceJMSException" name="RENIECQueryServiceJMSException" wsaw:Action="urn:queryByAdultIdRENIECQueryServiceJMSException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceIOException" name="RENIECQueryServiceIOException" wsaw:Action="urn:queryByAdultIdRENIECQueryServiceIOException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSInvalidSubqueryTypeException" name="RENIECQueryServiceRQSInvalidSubqueryTypeException" wsaw:Action="urn:queryByAdultIdRENIECQueryServiceRQSInvalidSubqueryTypeException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSInvalidErrorTypeException" name="RENIECQueryServiceRQSInvalidErrorTypeException" wsaw:Action="urn:queryByAdultIdRENIECQueryServiceRQSInvalidErrorTypeException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSConnectionException" name="RENIECQueryServiceRQSConnectionException" wsaw:Action="urn:queryByAdultIdRENIECQueryServiceRQSConnectionException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSException" name="RENIECQueryServiceRQSException" wsaw:Action="urn:queryByAdultIdRENIECQueryServiceRQSException"/>
+        </wsdl:operation>
+        <wsdl:operation name="consultarPersona">
+            <wsdl:input message="ns:consultarPersonaRequest" wsaw:Action="urn:consultarPersona"/>
+            <wsdl:output message="ns:consultarPersonaResponse" wsaw:Action="urn:consultarPersonaResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="queryByNames">
+            <wsdl:input message="ns:queryByNamesRequest" wsaw:Action="urn:queryByNames"/>
+            <wsdl:output message="ns:queryByNamesResponse" wsaw:Action="urn:queryByNamesResponse"/>
+            <wsdl:fault message="ns:RENIECQueryServiceJMSException" name="RENIECQueryServiceJMSException" wsaw:Action="urn:queryByNamesRENIECQueryServiceJMSException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceIOException" name="RENIECQueryServiceIOException" wsaw:Action="urn:queryByNamesRENIECQueryServiceIOException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSInvalidSubqueryTypeException" name="RENIECQueryServiceRQSInvalidSubqueryTypeException" wsaw:Action="urn:queryByNamesRENIECQueryServiceRQSInvalidSubqueryTypeException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSInvalidErrorTypeException" name="RENIECQueryServiceRQSInvalidErrorTypeException" wsaw:Action="urn:queryByNamesRENIECQueryServiceRQSInvalidErrorTypeException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSConnectionException" name="RENIECQueryServiceRQSConnectionException" wsaw:Action="urn:queryByNamesRENIECQueryServiceRQSConnectionException"/>
+            <wsdl:fault message="ns:RENIECQueryServiceRQSException" name="RENIECQueryServiceRQSException" wsaw:Action="urn:queryByNamesRENIECQueryServiceRQSException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="RENIECQueryServiceSoap11Binding" type="ns:RENIECQueryServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="queryByChildId">
+            <soap:operation soapAction="urn:queryByChildId" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="RENIECQueryServiceRQSException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidSubqueryTypeException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSInvalidSubqueryTypeException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceIOException">
+                <soap:fault use="literal" name="RENIECQueryServiceIOException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceJMSException">
+                <soap:fault use="literal" name="RENIECQueryServiceJMSException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSConnectionException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSConnectionException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidErrorTypeException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSInvalidErrorTypeException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidFamilyTiesTypeException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSInvalidFamilyTiesTypeException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="queryByAdultId">
+            <soap:operation soapAction="urn:queryByAdultId" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="RENIECQueryServiceRQSException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidSubqueryTypeException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSInvalidSubqueryTypeException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceIOException">
+                <soap:fault use="literal" name="RENIECQueryServiceIOException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceJMSException">
+                <soap:fault use="literal" name="RENIECQueryServiceJMSException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSConnectionException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSConnectionException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidErrorTypeException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSInvalidErrorTypeException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="consultarPersona">
+            <soap:operation soapAction="urn:consultarPersona" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryByNames">
+            <soap:operation soapAction="urn:queryByNames" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="RENIECQueryServiceRQSException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidSubqueryTypeException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSInvalidSubqueryTypeException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceIOException">
+                <soap:fault use="literal" name="RENIECQueryServiceIOException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceJMSException">
+                <soap:fault use="literal" name="RENIECQueryServiceJMSException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSConnectionException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSConnectionException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidErrorTypeException">
+                <soap:fault use="literal" name="RENIECQueryServiceRQSInvalidErrorTypeException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="RENIECQueryServiceSoap12Binding" type="ns:RENIECQueryServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="queryByChildId">
+            <soap12:operation soapAction="urn:queryByChildId" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="RENIECQueryServiceRQSException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidSubqueryTypeException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSInvalidSubqueryTypeException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceIOException">
+                <soap12:fault use="literal" name="RENIECQueryServiceIOException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceJMSException">
+                <soap12:fault use="literal" name="RENIECQueryServiceJMSException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSConnectionException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSConnectionException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidErrorTypeException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSInvalidErrorTypeException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidFamilyTiesTypeException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSInvalidFamilyTiesTypeException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="queryByAdultId">
+            <soap12:operation soapAction="urn:queryByAdultId" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="RENIECQueryServiceRQSException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidSubqueryTypeException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSInvalidSubqueryTypeException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceIOException">
+                <soap12:fault use="literal" name="RENIECQueryServiceIOException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceJMSException">
+                <soap12:fault use="literal" name="RENIECQueryServiceJMSException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSConnectionException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSConnectionException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidErrorTypeException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSInvalidErrorTypeException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="consultarPersona">
+            <soap12:operation soapAction="urn:consultarPersona" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryByNames">
+            <soap12:operation soapAction="urn:queryByNames" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="RENIECQueryServiceRQSException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidSubqueryTypeException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSInvalidSubqueryTypeException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceIOException">
+                <soap12:fault use="literal" name="RENIECQueryServiceIOException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceJMSException">
+                <soap12:fault use="literal" name="RENIECQueryServiceJMSException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSConnectionException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSConnectionException"/>
+            </wsdl:fault>
+            <wsdl:fault name="RENIECQueryServiceRQSInvalidErrorTypeException">
+                <soap12:fault use="literal" name="RENIECQueryServiceRQSInvalidErrorTypeException"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="RENIECQueryServiceHttpBinding" type="ns:RENIECQueryServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="queryByChildId">
+            <http:operation location="queryByChildId"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryByAdultId">
+            <http:operation location="queryByAdultId"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="consultarPersona">
+            <http:operation location="consultarPersona"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="queryByNames">
+            <http:operation location="queryByNames"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="RENIECQueryService">
+        <wsdl:port name="RENIECQueryServiceHttpSoap11Endpoint" binding="ns:RENIECQueryServiceSoap11Binding">
+            <soap:address location="http://localhost:8080/RENIECQueryService/services/RENIECQueryService.RENIECQueryServiceHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="RENIECQueryServiceHttpSoap12Endpoint" binding="ns:RENIECQueryServiceSoap12Binding">
+            <soap12:address location="http://localhost:8080/RENIECQueryService/services/RENIECQueryService.RENIECQueryServiceHttpSoap12Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="RENIECQueryServiceHttpEndpoint" binding="ns:RENIECQueryServiceHttpBinding">
+            <http:address location="http://localhost:8080/RENIECQueryService/services/RENIECQueryService.RENIECQueryServiceHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

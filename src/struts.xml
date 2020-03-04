@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+	<constant name="struts.action.excludePattern" value="/services/.*" />
+
+	<!-- constant to define result path locations to project root directory -->
+	<constant name="struts.convention.result.path" value="/"></constant>
+
+	<package name="default" extends="json-default">
+
+		<!-- logon authorization json call -->
+ 		<action name="verifyLogonAuthorization" 
+		        class="pe.gob.midis.sisfoh.action.IndexAction"
+		        method="verifyLogonAuthorization">
+			<result name="success" type="json"/>
+		</action>
+		
+		<!-- change password json call -->
+        <action name="changePassword"
+                class="pe.gob.midis.sisfoh.action.IndexAction"
+                method="changePassword">
+            <result name="success" type="json"/>
+        </action>
+
+		<!-- query by adult id json call -->
+		<action name="queryByAdultId" 
+		        class="pe.gob.midis.sisfoh.action.SearchByAdultIdAction"
+		        method="queryByAdultId">
+			<result name="success" type="json"/>
+		</action>
+
+		<!-- query by child id json call -->
+		<action name="queryByChildId" 
+		        class="pe.gob.midis.sisfoh.action.SearchByChildIdAction"
+		        method="queryByChildId">
+			<result name="success" type="json"/>
+		</action>
+
+		<!-- query by names json call -->
+		<action name="queryByNames" 
+		        class="pe.gob.midis.sisfoh.action.SearchByNamesAction"
+		        method="queryByNames">
+			<result name="success" type="json"/>
+		</action>
+
+		<!-- get all parameters json call -->
+        <action name="loadAllParameters"
+                class="pe.gob.midis.sisfoh.action.AdminParametersAction"
+                method="loadAllParameters">
+            <result name="success" type="json"/>
+        </action>
+
+		<!-- save parameter json call -->
+        <action name="saveParameter"
+                class="pe.gob.midis.sisfoh.action.AdminParametersAction"
+                method="saveParameter">
+            <result name="success" type="json"/>
+        </action>
+
+		<!-- remove parameter json call -->
+        <action name="removeParameter"
+                class="pe.gob.midis.sisfoh.action.AdminParametersAction"
+                method="removeParameter">
+            <result name="success" type="json"/>
+        </action>
+        
+		<!-- get all users json call -->
+        <action name="loadAllUsers"
+                class="pe.gob.midis.sisfoh.action.AdminUsersAction"
+                method="loadAllUsers">
+            <result name="success" type="json"/>
+        </action>
+
+		<!-- save users json call -->
+        <action name="saveUser"
+                class="pe.gob.midis.sisfoh.action.AdminUsersAction"
+                method="saveUser">
+            <result name="success" type="json"/>
+        </action>
+        
+		<!-- get all audit log json call -->
+        <action name="loadAllAuditLog"
+                class="pe.gob.midis.sisfoh.action.AdminAuditLogAction"
+                method="loadAllAuditLog">
+            <result name="success" type="json"/>
+        </action>
+        
+		<!-- clean all audit log json call -->
+        <action name="clearAuditLog"
+                class="pe.gob.midis.sisfoh.action.AdminAuditLogAction"
+                method="clearAuditLog">
+            <result name="success" type="json"/>
+        </action>
+        
+		<!-- checkUpload json call -->
+		<action name="verifyDownloadFinish" 
+		        class="pe.gob.midis.sisfoh.action.SearchByBatchAction"
+		        method="verifyDownloadFinish">
+            <result name="success" type="json"/>
+		</action>
+
+	</package>
+
+	<package name="cdr-actions" extends="struts-default">
+        <interceptors>
+             <interceptor class="pe.gob.midis.sisfoh.action.LoginInterceptor" 
+             			  name="loginInterceptor">
+             </interceptor>
+             <interceptor-stack name="loginStack">
+                     <interceptor-ref name="loginInterceptor" />
+                     <interceptor-ref name="defaultStack" />
+             </interceptor-stack>
+        </interceptors>
+
+		<!-- login action -->
+		<action name="main-menu">
+			<result>/pages/main-menu.jsp</result>
+            <result name="login">/</result>
+            <interceptor-ref name="loginStack" />
+		</action>
+		
+		<!-- search by adult id action -->
+		<action name="searchByAdultIdAction">
+            <interceptor-ref name="loginStack" />
+			<result>/pages/queries/search-by-adultid.jsp</result>
+            <result name="login">/</result>
+		</action>
+
+		<!-- search by child id action -->
+		<action name="searchByChildIdAction">
+            <interceptor-ref name="loginStack" />
+			<result>/pages/queries/search-by-childid.jsp</result>
+            <result name="login">/</result>
+		</action>
+
+		<!-- search by names action -->
+		<action name="searchByNamesAction">
+            <interceptor-ref name="loginStack" />
+			<result>/pages/queries/search-by-names.jsp</result>
+            <result name="login">/</result>
+		</action>
+
+		<!-- search by batch action -->
+  		<action name="searchByBatch">
+		    <interceptor-ref name="loginStack"></interceptor-ref>
+		    <result>/pages/queries/search-by-batch.jsp</result>
+            <result name="login">/</result>
+		</action>
+ 		<action name="processFile"
+ 				class="pe.gob.midis.sisfoh.action.SearchByBatchAction">
+		    <interceptor-ref name="loginStack"></interceptor-ref>
+ 		    <interceptor-ref name="fileUpload">
+		        <param name="maximumSize">10485760</param>
+		        <param name="allowedTypes">application/plain, text/plain</param>
+		        <param name="saveDir">/tmp</param>
+		    </interceptor-ref>
+		    <result name="success">/pages/queries/search-by-batch.jsp</result>
+            <result name="login">/</result>
+		</action>
+		
+		<!-- parameters admin action -->
+        <action name="adminParameters">
+            <interceptor-ref name="loginStack" />
+            <result>/pages/admin/adm-parameters.jsp</result>
+            <result name="login">/</result>
+        </action>
+
+		<!-- users admin action -->
+        <action name="adminUsers">
+            <interceptor-ref name="loginStack" />
+            <result>/pages/admin/adm-users.jsp</result>
+            <result name="login">/</result>
+        </action>
+        
+   		<!-- audit log admin action -->
+        <action name="adminAuditLog">
+            <interceptor-ref name="loginStack" />
+            <result>/pages/admin/adm-audit-log.jsp</result>
+            <result name="login">/</result>
+        </action>
+        
+		<!-- change password action -->
+        <action name="toolsChangePassword">
+            <interceptor-ref name="loginStack" />
+            <result>/pages/tools/change-password.jsp</result>
+            <result name="login">/</result>
+        </action>
+        
+		<!-- logout action -->
+        <action name="toolsLogout" 
+				class="pe.gob.midis.sisfoh.action.IndexAction"
+        		method="logOut">
+            <result>/</result>
+        </action>
+ 	</package>
+
+</struts>
+
