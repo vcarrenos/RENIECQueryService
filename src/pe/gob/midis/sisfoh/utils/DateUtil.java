@@ -24,7 +24,7 @@ import java.util.TimeZone;
  * Company: Sector Code
  * </p>
  * 
- * @author Josué López
+ * @author JosuÃ© LÃ³pez
  * @version 1.0
  */
 
@@ -43,7 +43,7 @@ public class DateUtil implements java.io.Serializable
 	public static String		SQL_TIME_FORMAT			= "HH24:MI:SS";
 	public static String		SQL_DATE_TIME_FORMAT	= "dd/MM/yyyy HH24:MI:SS";
 
-	private static String[]		dayOfWeek				= { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
+	private static String[]		dayOfWeek				= { "Domingo", "Lunes", "Martes", "MiÃ©rcoles", "Jueves", "Viernes", "SÃ¡bado" };
 	private static String[]		nameMonths				= { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre" };
 
 	/**
@@ -152,7 +152,7 @@ public class DateUtil implements java.io.Serializable
 	}
 
 	/**
-	 * Obtiene el año de la fecha actual
+	 * Obtiene el aÃ±o de la fecha actual
 	 * 
 	 * @return
 	 */
@@ -191,7 +191,7 @@ public class DateUtil implements java.io.Serializable
 	}
 
 	/**
-	 * Obtiene el año de la fecha ingresada
+	 * Obtiene el aÃ±o de la fecha ingresada
 	 * 
 	 * @param date
 	 *            fecha
@@ -453,7 +453,7 @@ public class DateUtil implements java.io.Serializable
 			remdr %= 60 * 1000;
 			int seconds = remdr / 1000;
 
-			f.format("%2d días %02d:%02d:%02d seg", days, hours, minutes, seconds);
+			f.format("%2d dÃ­as %02d:%02d:%02d seg", days, hours, minutes, seconds);
 			return f.toString();
 		}
 		catch (Exception e)
@@ -535,7 +535,7 @@ public class DateUtil implements java.io.Serializable
 	}
 
 	/**
-	 * Crea un objeto fecha a partir de tres valores numericos año, mes y dia
+	 * Crea un objeto fecha a partir de tres valores numericos aÃ±o, mes y dia
 	 * 
 	 * @param year
 	 * @param month
@@ -603,7 +603,7 @@ public class DateUtil implements java.io.Serializable
 	}
 
 	/**
-	 * Obtiene la fecha formateada segun el año mes y día
+	 * Obtiene la fecha formateada segun el aÃ±o mes y dÃ­a
 	 * 
 	 * @param format
 	 * @param year
@@ -623,7 +623,7 @@ public class DateUtil implements java.io.Serializable
 	}
 
 	/**
-	 * Obtiene la fecha formateada segun el año mes y día
+	 * Obtiene la fecha formateada segun el aÃ±o mes y dÃ­a
 	 * 
 	 * @param format
 	 * @param year
@@ -637,7 +637,7 @@ public class DateUtil implements java.io.Serializable
 	}
 
 	/**
-	 * Obtiene el nombre del día de la semana
+	 * Obtiene el nombre del dÃ­a de la semana
 	 * 
 	 * @param date
 	 * @return
@@ -649,7 +649,7 @@ public class DateUtil implements java.io.Serializable
 	}
 
 	/**
-	 * Obtiene el nombre del día de la semana
+	 * Obtiene el nombre del dÃ­a de la semana
 	 * 
 	 * @param date
 	 * @return
@@ -661,7 +661,7 @@ public class DateUtil implements java.io.Serializable
 	}
 
 	/**
-	 * Obtiene el nombre del día de la semana en formato corto
+	 * Obtiene el nombre del dÃ­a de la semana en formato corto
 	 * 
 	 * @param date
 	 * @return
@@ -685,7 +685,7 @@ public class DateUtil implements java.io.Serializable
 	}
 
 	/**
-	 * Obtiene el nombre del día de la semana en curso
+	 * Obtiene el nombre del dÃ­a de la semana en curso
 	 * 
 	 * @param date
 	 * @return
@@ -697,7 +697,7 @@ public class DateUtil implements java.io.Serializable
 	}
 
 	/**
-	 * Obtiene el nombre del día del mes en curso
+	 * Obtiene el nombre del dÃ­a del mes en curso
 	 * 
 	 * @param date
 	 * @return
@@ -709,7 +709,7 @@ public class DateUtil implements java.io.Serializable
 	}
 
 	/**
-	 * Obtiene el nombre del día de la semana en curso en formato corto
+	 * Obtiene el nombre del dÃ­a de la semana en curso en formato corto
 	 * 
 	 * @param date
 	 * @return

@@ -6,7 +6,7 @@ public class RQSParameterNotFoundException extends Exception {
 	private static final long serialVersionUID = -288269685691382425L;
 
 	public RQSParameterNotFoundException(String parameterName) {
-		super(String.format("Error: Par·metro '%s' NO encontrado en tabla `grl_parameter`", parameterName));
+		super(String.format("Error: Par√°metro '%s' NO encontrado en tabla `grl_parameter`", parameterName));
 		
 	}
 	

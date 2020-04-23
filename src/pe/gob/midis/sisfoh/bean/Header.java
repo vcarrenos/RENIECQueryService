@@ -30,19 +30,19 @@ public class Header {
 	static int __RESERVED_LEN                      = 10;
 
 	// Header fields
-	String  version;						// Versión de la trama
+	String  version;						// VersiÃ³n de la trama
 	int		headerLength;					// Longitud de cabecera
 	String  serviceType;					// Tipo de servicio
 	int		requestLength;					// Longitud de trama
 	String  fragmentation;					// fragmentacion
 	int		messageLifetime;				// Tiempo de vida del mensaje en la cola de respuesta(seg.). Uso futuro.
 	int		inquiryType;					// Tipo de consulta: 1 = Por nombres, 2 =  Por DNI Mayores, 4 = Por DNI Menores
-	String  checkCharacters;				// Caracteresde verificación
-	String  applicantInstitutionCode;		// Código de Institución Solicitante. Proporcionado por RENIEC: DE2068 = Desarrollo, LD2068 = Producción
-	String  reniecServerCode;				// Códigode servidor RENIEC
-	String  applicantInstitutionName;		// Agencia de la institución solicitante desde donde se realizó la consulta
+	String  checkCharacters;				// Caracteresde verificaciï¿½n
+	String  applicantInstitutionCode;		// CÃ³digo de InstituciÃ³n Solicitante. Proporcionado por RENIEC: DE2068 = Desarrollo, LD2068 = Producciï¿½n
+	String  reniecServerCode;				// CÃ³digode servidor RENIEC
+	String  applicantInstitutionName;		// Agencia de la instituciÃ³n solicitante desde donde se realizï¿½ la consulta
 	String  applicantInstitutionUser;		// DNI del consultante
-	String  applicantInstitutionHost;		// HOST de la institución solicitante desde donde se realizó la consulta
+	String  applicantInstitutionHost;		// HOST de la instituciÃ³n solicitante desde donde se realizÃ³ la consulta
 	String  reserved;						// Reservado para uso futuro
 
 	

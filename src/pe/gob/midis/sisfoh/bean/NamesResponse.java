@@ -18,8 +18,8 @@ public class NamesResponse {
 	static int __BYTES_RESERVADO 			=  8;
 	
 	// Names response fields 
-	private int    codigoError; 									// Código de error
-	private int    totalCoincidencias;								// Número total de coincidencias. 
+	private int    codigoError; 									// CÃ³digo de error
+	private int    totalCoincidencias;								// NÃºmero total de coincidencias. 
 	private String reservado; 										// Reservado para uso futuro
 	private List<NamesSubResponse>	listaPersonasEncontradas;		// Lista de personas		
 	

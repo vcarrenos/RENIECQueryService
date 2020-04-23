@@ -15,9 +15,9 @@ public class ChildDNIRequest extends Header {
 	final static int __BYTES_RESERVADO_3				= 14;	
 	
 	// Child DNI request fields
-	String idTutorNumber;				// Número de DNI del padre o apoderado.  
-	String idNumber;					// Número  de  DNI del menor 
-	FamilyTiesType  familyTiesType;		// Tipo de vínculo
+	String idTutorNumber;				// NÃºmero de DNI del padre o apoderado.  
+	String idNumber;					// NÃºmero  de  DNI del menor 
+	FamilyTiesType  familyTiesType;		// Tipo de vï¿½nculo
 	SubqueryType  subqueryType;			// Tipo de sub consulta
 	String reserved;					// Reservado para uso futuro
 	

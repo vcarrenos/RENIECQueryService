@@ -1,6 +1,6 @@
 // TODO: Generar log de auditoria.
-// TODO: Incluir perfiles de ejecución.
-// TODO: La consulta masiva debe ser registrada y programada su ejecución.
+// TODO: Incluir perfiles de ejecuciÃ³n.
+// TODO: La consulta masiva debe ser registrada y programada su ejecuciï¿½n.
 // TODO: DEfinir Excepciones para los errores
 
 
@@ -218,7 +218,7 @@ public class RENIECQueryService implements IRENIECQueryService {
 
 			if (params.isApplProxySet()) {
 				
-				LOG.info("Estableciendo parámetros del PROXY");
+				LOG.info("Estableciendo parï¿½metros del PROXY");
 				LOG.debug("proxyHost [" + params.getApplProxyHost() + "]");
 				LOG.debug("proxyPort [" + params.getApplProxyPort() + "]");
 				LOG.debug("proxyUser [" + params.getApplProxyUser() + "]");
@@ -246,7 +246,7 @@ public class RENIECQueryService implements IRENIECQueryService {
 							params.getApplReniecWSUser(),
 							params.getApplReniecWSPassword());
 					
-					// Si es una sesión correcta ... 
+					// Si es una sesiï¿½n correcta ... 
 					if ( !"2/3/4/5/6/8".contains(sessionRENIEC.trim()) )
 					{
 						// ... Obtenemos la identidad consolidada
@@ -256,7 +256,7 @@ public class RENIECQueryService implements IRENIECQueryService {
 										params.getApplReniecWSTraceCode(),
 										params.getApplReniecWSEntityUser(), dni);
 
-						// Verificamos que no exista error con la operación anterior
+						// Verificamos que no exista error con la operaciï¿½n anterior
 						errorCode = lstReturn.get(0);
 						
 						if ( errorCode.equals("0000") )
@@ -267,24 +267,24 @@ public class RENIECQueryService implements IRENIECQueryService {
 							lst.add (lstReturn.get(3));							// Nombres
 							lst.add (lstReturn.get(4).equals("1")? "M" : "F");	// Sexo
 							lst.add (lstReturn.get(5));							// Fecha de Nacimiento
-							lst.add (lstReturn.get(6));							// Código
-							lst.add (lstReturn.get(7));							// Restricción
+							lst.add (lstReturn.get(6));							// Cï¿½digo
+							lst.add (lstReturn.get(7));							// Restricciï¿½n
 						}
 						else
 						{
-							// 0000 : Operación Correcta.
+							// 0000 : Operaciï¿½n Correcta.
 							// 0001 : Usuario no existe.
 							// 0002 : El Servidor no puede atender el requerimiento.
-							// 5    : Excedió el máximo número de consultas asignadas por día.
-							// 3    : Esta consultando en un día y hora no permitido según convenio.
+							// 5    : Excediï¿½ el mï¿½ximo nï¿½mero de consultas asignadas por dï¿½a.
+							// 3    : Esta consultando en un dï¿½a y hora no permitido segï¿½n convenio.
 							// 21   : El DNI solicitado se encuentra cancelado en el RUIPN
 							// 22   : El DNI solicitado se encuentra restringido en el RUIPN
 							// 23   : El DNI solicitado se encuentra observado en el RUIPN
-							// NTP  : No tienen permisos de acceso al método consulta.
-							// SINV : Código de Sesión ingresado inválido.
-							// DNE  : El DNI consultado es inválido.
-							// DNV  : El DNI del usuario de la empresa es inválido. No está autorizado a consultar.
-							// UNL  : Aplicación que consulta a Web Service no se ha autenticado, debe invocar previamente getSession.
+							// NTP  : No tienen permisos de acceso al mï¿½todo consulta.
+							// SINV : Cï¿½digo de Sesiï¿½n ingresado invï¿½lido.
+							// DNE  : El DNI consultado es invï¿½lido.
+							// DNV  : El DNI del usuario de la empresa es invï¿½lido. No estï¿½ autorizado a consultar.
+							// UNL  : Aplicaciï¿½n que consulta a Web Service no se ha autenticado, debe invocar previamente getSession.
 							
 							ErrorType et = ErrorRENIECHelper.getError(errorCode);
 							
@@ -303,12 +303,12 @@ public class RENIECQueryService implements IRENIECQueryService {
 					}
 					else
 					{
-						// 2 : Error en la Operación
+						// 2 : Error en la Operaciï¿½n
 						// 3 : La Consulta esta fuera del Horario Permitido
 						// 4 : Usuario no valido
-						// 5 : La Consulta excedió la cantidad máxima permitida
+						// 5 : La Consulta excediï¿½ la cantidad mï¿½xima permitida
 						// 6 : Usuario no existe
-						// 8 : contraseña incorrecta.			
+						// 8 : contraseï¿½a incorrecta.			
 
 						ErrorType et = ErrorRENIECHelper.getError(errorCode);
 						
@@ -329,11 +329,11 @@ public class RENIECQueryService implements IRENIECQueryService {
 				if ( --retriesNumber ==  params.getApplReniecWSMaxRetries() && !errorCode.equals("0000") ) {
 					
 					lst.add("4");
-					LOG.error(String.format("Se alcanzó el máximo de intentos con la RENIEC"));
+					LOG.error(String.format("Se alcanzï¿½ el mï¿½ximo de intentos con la RENIEC"));
 				}
 				
 			} catch (Exception e) {
-				LOG.error("Error de Conectividad. No se pudo establecer conexión con el servicio web de la RENIEC");
+				LOG.error("Error de Conectividad. No se pudo establecer conexiï¿½n con el servicio web de la RENIEC");
 				throw new RQSException(ErrorType.__CANNOT_CONNECT_WITH_WS_RENIEC_ERROR);
 			}
 		}

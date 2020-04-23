@@ -75,32 +75,32 @@ public class BaseDNIResponse {
 	final static int __BYTES_LONGITUD_FOTO				=  9;
 	
 	// Base DNI response fields 
-	private int    codigoError; 				// C骴igo de error
-	private String numeroDNI; 					// N鷐ero de DNI
-	private int    digitoVerificacion;			// D韌ito de verificaci髇
+	private int    codigoError; 				// C贸digo de error
+	private String numeroDNI; 					// N煤mero de DNI
+	private int    digitoVerificacion;			// D锟絞ito de verificaci锟絥
 	private String apellidoPaterno;  			// Apellido Paterno
 	private String apellidoMaterno; 			// Apellido Materno
 	private String apellidoCasada; 				// Apellido Casada
 	private String nombres; 					// Nombres
-	private String codigoUbigeoDomicilio;		// C骴igo de UBIGEO domicilio
-	private String codigoDepaDomicilio;			// C骴igo de UBIGEO departamento domicilio
-	private String codigoProvDomicilio;			// C骴igo de UBIGEO provincia domicilio
-	private String codigoDistDomicilio;			// C骴igo de UBIGEO distrito domicilio
+	private String codigoUbigeoDomicilio;		// C贸digo de UBIGEO domicilio
+	private String codigoDepaDomicilio;			// C贸digo de UBIGEO departamento domicilio
+	private String codigoProvDomicilio;			// C贸digo de UBIGEO provincia domicilio
+	private String codigoDistDomicilio;			// C贸digo de UBIGEO distrito domicilio
 	private String localidadDomicilio;			// Localidad domicilio
 	private String nombreDepaDomicilio;			// Departamento domicilio
 	private String nombreProvDomicilio;			// Provincia domicilio
 	private String nombreDistDomicilio;			// Distrito domicilio
-	private int    codigoEstadoCivil;			// C骴igo estado civil
+	private int    codigoEstadoCivil;			// C贸digo estado civil
 	private String estadoCivil;					// Estado civil
-	private String codigoNivelEducacion;		// C骴igo de Grado de instrucci髇
-	private String nivelEducacion;				// Grado de instrucci髇
+	private String codigoNivelEducacion;		// C锟絛igo de Grado de instrucci锟絥
+	private String nivelEducacion;				// Grado de instrucci贸n
 	private int    estatura;					// Estatura
-	private int    codigoSexo;					// C骴igo sexo
+	private int    codigoSexo;					// C贸digo sexo
 	private String sexo;						// Sexo
-	private String codigoUbigeoNacimiento;		// C骴igo de ubigeo nacimiento
-	private String codigoDepaNacimiento;		// C骴igo de ubigeo departamento nacimiento
-	private String codigoProvNacimiento;		// C骴igo de ubigeo provincia nacimiento
-	private String codigoDistNacimiento;		// C骴igo de ubigeo distrito nacimiento
+	private String codigoUbigeoNacimiento;		// C贸digo de ubigeo nacimiento
+	private String codigoDepaNacimiento;		// C贸digo de ubigeo departamento nacimiento
+	private String codigoProvNacimiento;		// C贸digo de ubigeo provincia nacimiento
+	private String codigoDistNacimiento;		// C贸digo de ubigeo distrito nacimiento
 	private String localidadNacimiento;			// Localidadnacimiento
 	private String nombreDepaNacimiento;		// Departamento nacimiento
 	private String nombreProvNacimiento;		// Provincia nacimiento
@@ -115,17 +115,17 @@ public class BaseDNIResponse {
 	private String apellidoMaternoMadre;		// Apellido Materno Madre
 	private String apellidoCasadaMadre;			// Apellido Casada Madre
 	private String nombresMadre;				// Nombre de la madre
-	private Date   fechaRegistro;				// Fecha de inscripci髇
-	private Date   fechaExpedicion; 			// Fecha de expedici髇
+	private Date   fechaRegistro;				// Fecha de inscripci锟絥
+	private Date   fechaExpedicion; 			// Fecha de expedici锟絥
 	private Date   fechaExpiracion;				// Fecha de caducidad
-	private String codigoRestriccion;			// C骴igo de Restricci髇
-	private String restriccion;					// Restricci髇
-	private String prefijoDireccion;			// Prefijo direcci髇
-	private String direccion;					// Direcci髇
-	private String numeroDireccion;				// N鷐ero direcci髇
+	private String codigoRestriccion;			// C贸digo de Restricci贸n
+	private String restriccion;					// Restricci锟絥
+	private String prefijoDireccion;			// Prefijo direcci贸n
+	private String direccion;					// Direcci锟絥
+	private String numeroDireccion;				// N锟絤ero direcci锟絥
 	private String bloqueOChalet;				// Block o chalet
 	private String interior;					// Interior
-	private String urbanizacion;				// Urbanizaci髇
+	private String urbanizacion;				// Urbanizaci贸n
 	private String etapa;						// Etapa
 	private String manzana;						// Manzana
 	private String lote;						// Lote
@@ -133,8 +133,8 @@ public class BaseDNIResponse {
 	private String prefijoDptoPisoInterior;		// Prefijo de dpto piso interior
 	private String prefijoUrbCondomResid;		// Prefijo de urb cond resid
 	private String reservado;					// Reservado
-	private String direccionCompleta;			// Direcci髇 completa
-	private String fotografiaBase64;			// Fotograf韆 en formato Base64
+	private String direccionCompleta;			// Direcci贸n completa
+	private String fotografiaBase64;			// Fotograf铆a en formato Base64
 	private int    longitudFoto;				// Longitud de la foto
 	
 	public BaseDNIResponse() {

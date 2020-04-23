@@ -31,7 +31,7 @@ public class RQSException extends Exception {
 		if ( et != null)
 			throw new RQSException(et);
 		else
-			throw new RQSException(String.format("[%d][Código de error desconocido]", errorCode));
+			throw new RQSException(String.format("[%d][CÃ³digo de error desconocido]", errorCode));
 	}
 	
 }

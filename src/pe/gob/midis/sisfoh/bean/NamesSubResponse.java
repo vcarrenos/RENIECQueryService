@@ -17,8 +17,8 @@ public class NamesSubResponse {
 	static int __BYTES_RESERVADO				= 10;
 	
 	// Sub response names fields
-	private String numeroDNI;			// Número de DNI
-	private String digitoVerificacion;	// Dígito de verificación
+	private String numeroDNI;			// NÃºmero de DNI
+	private String digitoVerificacion;	// DÃ­gito de verificaciï¿½n
 	private String tipoFichaRegistral;	// Tipo de Ficha Registral
 	private String apellidoPaterno; 	// Apellido Paterno
 	private String apellidoMaterno; 	// Apellido Materno

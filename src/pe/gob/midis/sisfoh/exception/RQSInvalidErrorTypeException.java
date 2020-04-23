@@ -7,7 +7,7 @@ public class RQSInvalidErrorTypeException extends Exception {
 
 	public RQSInvalidErrorTypeException(int errorCode) {
 
-		super(String.format("[%d][El Código de error devuelto por RENIEC es desconocido]", errorCode));	
+		super(String.format("[%d][El CÃ³digo de error devuelto por RENIEC es desconocido]", errorCode));	
 	}
 }
 

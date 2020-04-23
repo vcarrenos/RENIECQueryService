@@ -9,7 +9,7 @@ public class AdultDNIRequest extends Header {
 	static int __ADULT_DNI_REQUEST_LENGTH = 30;
 	
 	// Adult DNI request fields
-	String idNumber;				// Número de DNI
+	String idNumber;				// NÃºmero de DNI
 	SubqueryType  subqueryType;		// Tipo de sub consulta
 	int    signatureType;			// Formato de firma
 	String reserved;				// Reservado para uso futuro

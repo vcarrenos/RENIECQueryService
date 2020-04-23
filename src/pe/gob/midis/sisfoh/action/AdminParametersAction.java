@@ -110,7 +110,7 @@ public class AdminParametersAction extends ActionSupport
 			if (getParameterCode().equals("APP_COMPANY_KEY") 
 				&& !paramCurrentKEY.getValue().equals(getParameterValue())) {
 
-				// Se actualiza la contraseña con la nueva llave 
+				// Se actualiza la contraseÃ±a con la nueva llave 
 				GeneralEntitiesHelper.updatePasswordUsers(
 						paramCurrentKEY.getValue(), getParameterValue());
 				
